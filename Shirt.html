@@ -1,0 +1,734 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+   
+    <!-- Initialize Swiper -->
+    <script src="./js/swiper.min.js"></script>
+    <link rel="stylesheet" href="./js/swiper.min.css">
+
+
+<!--Dialog -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+<script src="./js/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+<link rel="stylesheet" href="./js/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+
+
+    
+    <style>
+/* *{
+    border: 1px solid red;
+    
+} */
+
+
+    h1,h2,h3,h4,h5,h6,li
+        {
+            font-weight: 900;
+            /* font-size: 20px; */
+            font-family: 'Oswald', sans-serif;
+        }
+         #loginout h4{
+            margin: 3px;
+            font-size: 20px;
+        } 
+        #loginout > p{
+            margin: 21px;
+            font-size: 20px;
+            font-weight: bold;
+        } 
+        #resultfail{
+            font-size: 35px;
+            vertical-align: 12rem;
+        }
+
+    /* Css 輪轉 */
+        .swiper-container {
+              width: 100%;
+              height: 500px;
+            }
+            .swiper-slide {
+              text-align: center;
+              font-size: 18px;
+              background: #393232;
+              /* Center slide text vertically */
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: -webkit-flex;
+              display: flex;
+              -webkit-box-pack: center;
+              -ms-flex-pack: center;
+              -webkit-justify-content: center;
+              justify-content: center;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
+              -webkit-align-items: center;
+              align-items: center;
+            }
+            .swiper-slide img{
+              box-shadow: 5px 10px 20px #fff;
+              width: auto;
+              height: 340px;
+              border-radius: 12px;
+            }
+            .swiper-button-next::after{
+                content: "Right";
+                font-size: 20px;
+                font-weight: 900;
+                display: inline-block;
+                color:#fff;
+                position: relative;
+                left:-100px;
+            }
+            .swiper-button-prev::before{
+                content: "left";
+                font-size: 20px;
+                font-weight: 900;
+                display: inline-block;
+                color:#fff;
+                position: relative;
+                left:100px;
+            }
+    .nav{
+        background-color: #4d4545;
+        height: 100px;
+        border-bottom: 1px solid #9c9baf;
+    }
+    .nav-a{
+        font-size: 150px;
+        margin: 30px;
+        color: white;
+        font-size: 20px;
+    }
+    .fa-user{
+        width: 200px;
+        height: 300px;
+    }
+    .logo{
+        color:white;
+        position: relative;
+        margin-top: 25px;
+        left: -90px;
+    }
+    .head-col{
+        background-color: #364f6b;
+        color: #f5f5f5;
+
+    }
+    .head-img{
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        
+        /* background-image: url("https://static.wixstatic.com/media/a9ff3b_3be32fd5866944a0b2bd867c8e0dbaf9.jpg/v1/fill/w_490,h_470,al_c,q_80,usm_0.66_1.00_0.01/a9ff3b_3be32fd5866944a0b2bd867c8e0dbaf9.webp"); */
+    }
+    .head-img img{
+        width: 100%;
+        height: 43vh;
+    }
+    .head-bgc{
+        background-color:#E5F9FA;
+    }
+    .tile1{
+        text-align: center;
+        font-size: 50px;
+        margin-top: 70px;
+        
+    }
+    .tile2{
+        text-align: center;
+        font-size: 30px;
+        margin-top: 10px;
+        font-weight: 400;
+    }
+    .tile2::before{
+        content: "";
+        display: block;
+        background-color:#f5f5f5;
+        width: 111px;
+        height: 5px;
+        margin: 50px 160px;
+        opacity: 0.7;
+    }
+    .tilebtn{
+        margin: 20px 140px;
+    }
+    .title-gril{
+        background-color: #ea5455;
+        color: white;
+
+    }
+
+    .txt-new{
+        text-align: center;
+        /* background-color: red; */
+
+    }
+     .input-group{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    } 
+    .card-body{
+        background-color: white;
+        color: #52616b;
+       
+    }
+    .card-title{
+        display: flex;
+        /* background-color:RED; */
+        flex-direction: row;
+        justify-content: center;
+    }
+    .card{
+        margin: 30px;
+        border-radius: 6px;
+        box-shadow: 0 1px 2px #AAA;
+        cursor: pointer;
+    }
+    .card h3,p{
+        text-align: center;
+    }
+    /* .card :hover{
+        box-shadow: 3px 10px 16px #AAA;
+        
+    } */
+    .card img:hover{
+        transform: scale(1.03,1.03);
+        transition-duration: 0.8s;
+        box-shadow: 3px 10px 16px #AAA;
+        
+    }
+    .new-arrived h4{
+        text-align: center;
+        font-size: 50px;
+        font-weight: 400;
+        margin: 50px;
+    }
+    .arrived-text h4,h3{
+        text-align: center;
+        margin: 25px;
+        font-size: 30px;
+    }
+    .arrived-text p{
+        font-size: 20px;
+        font-weight: 100;
+    }
+    .input{
+        position: relative;
+        top: 20px;
+        left: 42%;
+        right: 30%;
+        width: 300px;
+    }
+    .input:hover{
+        border: 3px solid #004400;
+    }
+
+    .btnnew{
+        position: relative;
+        left: 42%;
+        right: 20%;
+        top: 30px;
+        width: 280px;
+        height: 50px;
+        margin: 10px;
+        font-size: 20px;
+        color: green;
+        margin-bottom: 120px; 
+    }
+
+    #disscount{
+        background-color:#2E2E2E;
+        height: 60vh;
+    }
+
+    .pic{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        cursor: pointer;
+    }
+    .pic1{
+        background-image: url(https://static.wixstatic.com/media/a9ff3b_1ba82db8bcf84c41a63122150bf912e3.jpg/v1/fill/w_458,h_426,al_c,q_80,usm_0.66_1.00_0.01/a9ff3b_1ba82db8bcf84c41a63122150bf912e3.webp);
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 30px;
+        height: 350px;
+        width: 450px;
+        opacity: 0.9;
+        margin-top: 80px;
+    }
+
+    .pic2{
+        background-image: url(https://static.wixstatic.com/media/a9ff3b_cf3a4b4ab48649a98e7b61f4b1bc0694.jpg/v1/fill/w_458,h_426,al_c,q_80,usm_0.66_1.00_0.01/a9ff3b_cf3a4b4ab48649a98e7b61f4b1bc0694.webp);
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 30px;
+        height: 350px;
+        width: 450px;
+        opacity: 0.9;
+        margin-top: 80px;
+    }
+    .pic h1{
+        text-align: center;
+        margin-top: 130px;
+        color:white;
+        font-size: 40px;
+    }
+    .pic span{
+        text-align: center;
+        display: block;
+        margin: 10px;
+        color:white;
+        font-size: 20px;
+    }
+    #policy{
+        background-color: #eaeaea;
+        height: 30vh;
+
+    }
+    #policy h4{
+        font-weight: bold;
+    }
+    #policy li:hover{
+        color: black;
+        
+    }
+    .col-2{
+        color: #9c9baf;
+        margin-top: 40px;
+        padding: 20px;
+        font-size: 14px;
+        border-left: 1px solid #c5c5ca;
+        padding: 12px;
+        height: 180px;
+    }
+    .col-2 h4{
+        margin-bottom: 20px;
+        margin-left: -30px;
+        text-align: center;
+    }
+    .col-2 li{
+        list-style: none;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    #footer{
+        /* height: 30px; */
+        background-color:#2E2E2E;
+        /* color:blanchedalmond; */
+        text-align: center;
+
+    }
+
+    #footer .row{
+        background-color:#2E2E2E;
+        color:white;
+        text-align: center;
+        font-size: 10px;
+        margin-left: 380px;
+        height: 8vh;
+    }
+    #footer .row h3{
+        font-size: 20px;
+        }
+    .i {
+        position: relative;
+        right: 420px;
+        top: 300px;
+        cursor: pointer;
+        background-color: #eee;
+        border-radius: 4px;
+        margin-left: 5px;
+        border: 2px solid red;
+        border-radius: 5px;
+        padding: 4px;
+}
+
+/* Diago跳出畫面 */
+
+.ui-widget-header{
+  color: #fff;  
+  background-color: #364f6b;
+  text-align: center;
+  font-weight: bold;
+  margin: 2px;
+}
+.ui-widget-content{
+    background-color: #fff;
+    color: black;
+    opacity: 0.95;
+    font-size: 19px;
+    /* margin: 20px; */
+}
+.ui-widget-content p{
+    font-size: 20px;
+    margin: 20px;
+}
+.ui-dialog-titlebar-close{
+    display: none;
+}
+.ui-dialog-buttonset button{
+    color: black;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: #E5F9FA;
+    margin: 20px;
+    padding: 5px;
+    margin: 120px;
+}
+.ui-dialog-buttonset button:hover{
+    background-color: #364f6b;
+    color:#fff;
+    box-shadow: none;
+}
+#gmail h3{ 
+    color: #b83b5e;
+    text-align: center;
+}
+
+    </style>
+    </head>
+
+
+  <body>
+    <div id="navbar">
+        <ul class="nav justify-content-center nav">
+            <li class="nav-item">
+                <h1 class="logo">Z!ZA</h1>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active nav-a" href="#">本週新品</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active nav-a" href="#">女士</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active nav-a" href="#">男士</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active nav-a" href="#">SHOES & BAGS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active nav-a" href="#"><i class="fas fa-user" id="login">登入</i></a>
+                 <div id="loginout" title="系統">
+                        <h4>請輸入帳號密碼!!</h4>
+                        <p>帳號<input type="text"></p>
+                        <p>密碼<input type="text"></p>
+                    </div>
+                    
+                    <div id="resultfail">
+                        <p>歡迎登入</p>
+                    </div> 
+            </li>
+    </ul>
+    </div>
+
+
+
+    <div id="swiper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide"><img src="./jpg/3.jpeg" alt="" ></div>
+                      <div class="swiper-slide"><img src="./jpg/2.jpeg" alt=""></div>
+                      <div class="swiper-slide"><img src="./jpg/10.jpeg" alt=""></div>
+                      <div class="swiper-slide"><img src="./jpg/9.jpeg" alt=""></div>
+                      <div class="swiper-slide"><img src="./jpg/11.jpeg" alt=""></div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <!-- <div class="swiper-pagination"></div> -->
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                  </div>
+            
+            </div>    
+        </div>
+    </div>
+
+
+
+    <div id="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-3 head-bgc"></div>
+                <div class="col-3 head-img">
+                    <img src="./jpg/9.jpeg" alt="">
+                    <!-- <img src="./jpg/2.jpeg" alt="">
+                    <img src="./jpg/3.jpeg" alt=""> -->
+                    <!-- <p>asdads</p> -->
+                    <!-- <img src="./jpg/1.jpg" alt=""> -->
+
+                </div>
+                <div class="col-3 title-gril">
+                    <h1 class="tile1">春夏商品</h1>
+                    <h4 class="tile2">SHOES & BAGS</h4>
+                    <button type="button" class="btn btn btn-warning btn-lg tilebtn">Shop#Woman</button>
+
+                </div>
+                <div class="col-3 head-bgc"></div>
+            </div>
+        </div>
+        <div class="container-fluid">
+                <div class="row">
+                    <div class="col-3 head-bgc"></div>
+                    <div class="col-3 head-col">
+                            <h1 class="tile1">男士精選</h1>
+                            <h4 class="tile2">HOT SPRING LOOKS</h4>
+                            <button type="button" class="btn btn-primary btn-lg tilebtn">Shop#Man</button>
+                        </div>
+                    <div class="col-3 head-img"><img src="https://static.wixstatic.com/media/a9ff3b_e3d29ce5f3e946e2b2b4c710e6e7ca75.jpg/v1/fill/w_490,h_470,al_c,q_80,usm_0.66_1.00_0.01/a9ff3b_e3d29ce5f3e946e2b2b4c710e6e7ca75.webp" alt=""></div>
+                    <div class="col-3 head-bgc"></div>
+                </div>
+            </div>
+    </div>
+
+
+    <div id="content">
+        <div class="container-fluid">
+            <div class="col-12 new-arrived">
+                <h4>最新商品</h4>
+
+     <div class="row card-title">
+        <div class="card" style="width: 18rem;">
+            <img src="https://static.wixstatic.com/media/84770f_92ad288f7eb849c68652826216de56dc.png/v1/fill/w_315,h_414,al_c,q_85,usm_0.66_1.00_0.01/84770f_92ad288f7eb849c68652826216de56dc.webp" class="card-img-top" class="card-img-top" alt="...">
+                 <div class="card-body">
+                    <h3>女士套裝</h3>
+                    <p>$990</p>
+            </div>
+            </div>
+                    <div class="card" style="width: 18rem;">
+                            <img src="https://static.wixstatic.com/media/84770f_fa2cb753b49b43faa1e9b3da2e8f72c0.png/v1/fill/w_315,h_414,al_c,q_85,usm_0.66_1.00_0.01/84770f_fa2cb753b49b43faa1e9b3da2e8f72c0.webp" class="card-img-top" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h3>男士混搭</h3>
+                                <p>$990</p>
+                            </div>
+                          </div>
+                          <div class="card" style="width: 18rem;">
+                                <img src="https://static.wixstatic.com/media/84770f_8745e3f04d8e4662ba23b4d575602616.png/v1/fill/w_315,h_414,al_c,q_85,usm_0.66_1.00_0.01/84770f_8745e3f04d8e4662ba23b4d575602616.webp" class="card-img-top" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h3>鞋款</h3>
+                                    <p>$990</p>
+                                </div>
+                              </div>
+
+        </div>
+            <div class="arrived-text">        
+                <h4>訂閱最新流行資訊</h4>
+                <p>請在下方處輸入您的電子郵件地址</p>
+            </div>
+            <div>
+                    <div class="input-group mb-3">
+                            <input type="text" class="form-control col-4" placeholder="請輸入電子郵件" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                              <span class="input-group-text"  id="basic-addon2"> @gmail.com</span>
+                            </div>
+                          </div>
+                    <button type="button" class="btn btn-outline-success btnnew">提交</button>
+                    
+                    <div id="gmail" title="系統">
+                            <h3>即日購買秋季商品全面五折起!</h3>
+                        </div>
+    
+
+
+        </div>    
+        </div>
+    </div>
+
+    <div id="disscount">
+        <div class="container-fluid">
+            <div class="row pic">
+                <div class="pic1 ">
+                    <h1>本月特價優惠</h1>
+                    <span>超殺優惠</span>
+                    <!-- <i class="i"></i> -->
+                </div>
+                <div class="pic2">
+                    <h1>WINTER SALE <span>最低三折</span></h1>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+
+    <div id="policy">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-2">
+                        <h4>Z!ZA.Com</h4>
+                </div>
+                <div class="col-2">
+                    <h4>顧客諮詢</h4>
+                    <ul>
+                        <li>運送方式></li>
+                        <li>退貨條款></li>
+                        <li>聯絡資訊></li>
+                        <li>關於我們></li>
+                    </ul>
+                </div>
+
+                <div class="col-2">
+                        <h4>本地門市</h4>
+                        <ul>
+                            <li>台北旗艦店</li>
+                            <li>新竹光復南路店</li>
+                            <li>台中中正店</li>
+                            <li>高雄駁二店</li>
+                        </ul>
+                </div>
+
+                <div class="col-2">
+                    <h4>聯絡資訊</h4>
+                    <ul>
+                        <li><img src="https://static.wixstatic.com/media/d7ffe259c9e54f59837481b3dd0130eb.png/v1/fill/w_30,h_30,al_c,q_80,usm_0.66_1.00_0.01/d7ffe259c9e54f59837481b3dd0130eb.webp" alt=""><span>Instagram</span></li>
+                        <li><img src="https://static.wixstatic.com/media/d3470ec8ca26475da4b228f0199b5d3d.png/v1/fill/w_30,h_30,al_c,q_80,usm_0.66_1.00_0.01/d3470ec8ca26475da4b228f0199b5d3d.webp" alt=""><span>facebook</span></li>
+                    </ul>
+                </div>
+            </div>
+     </div>
+
+           
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="row">
+                    <h3>© 2019 by Eic Liao created</h3>
+                </div>
+            </div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+      
+  <script>
+        $(document).ready(function () {
+
+        var swiper = new Swiper('.swiper-container', {
+          pagination: {
+            el: '.swiper-pagination',
+            type: 'progressbar',
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+
+
+
+
+            $('.card-body').hover(function(){
+                $(this).css("background-color","#fc5185");
+                $(this).css("color","#f6f6f6");
+                $(this).css("font-size","30px");
+            
+            });
+            $('.card-body').mouseleave(function(){
+                $(this).css("background-color","#f9f7f7");
+                $(this).css("color","#212121");
+                $(this).css("font-size","20px");
+
+            });
+            $(".btnnew").click(function(){
+                alert("已提交");
+            });
+
+
+            // $("#header img").click(function(){
+            //     $(this).fadeOut(600,function(){
+            //     $(this).attr("src","./jpg/4.jpeg")
+            //     $(this).fadeIn()
+            // })
+            // });
+            // $("#header img").click(function(){
+            //     $(this).fadeOut(300,function(){
+            //     $(this).attr("src","./jpg/2.jpeg")
+            //     $(this).fadeIn()
+            // })
+            // });
+            // $('#disscount').hoverpulse({
+            //     size: 30,
+            //     speed: 400
+            // });
+
+
+
+
+
+        $(".fas").click(function(e){
+            $("#loginout").dialog("open");
+            $("#loginout").parent().css("transition-duration","0.6s")
+            $("#loginout").parent().css("width","400px")
+            $("#loginout").parent().css("height","auto")
+            e.preventDefault();
+        });
+
+        var check_login=function() {
+            //check database
+            $(this).dialog("close");
+            $("#resultfail").dialog("open");
+            }
+
+        $("#loginout").dialog({
+            autoOpen: false,
+            modal: true,
+            tile: "info",
+            buttons:{
+                "取消":function(){$(this).dialog("close")},
+                "確定":check_login
+            }
+        });
+        $("#resultfail").dialog({
+            autoOpen: false,
+            modal: true,
+            buttons: {
+            確定: function() {
+                    $(this).dialog("close");
+                    }
+            }
+            });
+
+            $(".btnnew").click(function(){
+                $("#gmail").dialog("open");
+                e.preventDefault()
+            })
+            $("#gmail").dialog({
+                autoOpen: false,
+                width: 600,
+                modal: true,
+                title: "本月會員優惠",
+                show: {
+                effect: "blind",
+                duration: 800
+                },
+                buttons:{
+                    "確定": function(){
+                        $(this).dialog("close");
+
+                    }
+                }
+            })
+            
+
+        });
+       
+        </script>
+
+</html>
