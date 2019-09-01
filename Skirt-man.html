@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Shirt_man</title>
+    <style>
+/* 
+        *{
+            border: 1px solid red;
+        } */
+
+      h1,h2,h3,h4,h5,h6,li
+        {
+            font-weight: 900;
+            font-family: 'Oswald', sans-serif;
+        
+        }
+        a:visited { 
+            color:#f6f6f6; 
+            text-decoration:underline; 
+            } 
+
+        a:hover { 
+        color:#f6f6f6; 
+        text-decoration:none; 
+        } 
+
+        
+        .nav{
+        background-color: #4d4545;
+        height: 100px;
+        border-bottom: 1px solid #9c9baf;
+    }
+    .nav-a{
+        font-size: 150px;
+        margin: 30px;
+        color: white;
+        font-size: 20px;
+    }
+    .fa-user{
+        width: 200px;
+        height: 300px;
+    }
+    .logo{
+        color:white;
+        position: relative;
+        margin-top: 25px;
+        left: -90px;
+    }
+    #title .row{
+        display: flex;
+        flex-direction:row;
+        justify-content: center;
+        background-color: #f6f6f6;
+    }
+    #title h3{
+        margin: 40px;
+        font-size: 50px;
+        color:#2b2e4a;
+        font-weight: 900;
+    }
+    #cardshow .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 20px;
+        margin: 13px;
+ 
+    }
+    
+    .card-img-top{
+        height: 30vh;
+       
+    }
+    .btn-primary{
+        float: right;
+        width: 150px;
+        height: 40px;
+    }
+    .overlayimg{
+        position: relative;
+    }
+    .overlay{
+        position: absolute;
+        width: 100%;
+        top: 40%;
+        bottom:0;
+        left: 0;
+        opacity: 0;
+        background-color: #f6f6f6;
+        transition: 0.9s ease; 
+        overflow: hidden;
+        color: #222831;
+        font-size: 25px;
+        padding: 20px;
+        text-align: center;
+    }
+     .card:hover .overlay{
+        position: absolute;
+        top: 70%;
+        font-size: 25px;
+        text-align: center;
+        font-weight: 900;
+        width: 100%;
+        transition-duration: 0.8s;
+        opacity: 0.9;
+        cursor: pointer;
+    }
+
+
+    #policy{
+        background-color: #eaeaea;
+        height: 30vh;
+
+    }
+    #policy h4{
+        font-weight: bold;
+    }
+    #policy li:hover{
+        color: black;
+        
+    }
+    #policy .col-2{
+        color: #9c9baf;
+        margin-top: 40px;
+        padding: 20px;
+        font-size: 14px;
+        border-left: 1px solid #c5c5ca;
+        padding: 12px;
+        height: 180px;
+    }
+    #policy .col-2 h4{
+        margin-bottom: 20px;
+        margin-left: -30px;
+        text-align: center;
+    }
+    #policy .col-2 li{
+        list-style: none;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    #footer{
+        /* height: 30px; */
+        background-color:#2E2E2E;
+        /* color:blanchedalmond; */
+        text-align: center;
+
+    }
+
+    #footer .row{
+        background-color:#2E2E2E;
+        color:white;
+        text-align: center;
+        font-size: 10px;
+        margin-left: 380px;
+        height: 3vh;
+    }
+    #footer .row h3{
+        font-size: 20px;
+        vertical-align:bottom;	
+      }
+    
+    </style>
+
+  </head>
+  <body>
+    <div id="navbar">
+        <ul class="nav justify-content-center nav">
+            <li class="nav-item">
+                <h1 class="logo">
+                    <a href="https://eric-yu-liao.github.io/Shirt/Shirt.html">Z!ZA</a>
+                </h1>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active nav-a" href="#content">最新商品</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active nav-a" href="https://eric-yu-liao.github.io/Shirt/Skirt-girl.html">女士</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active nav-a" href="#">男士</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active nav-a" href="#policy">聯絡我們</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active nav-a" href="#policy">首頁</a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link active nav-a" href="#"><i class="fas fa-user" id="login">登入</i></a>
+                 <div id="loginout" title="系統">
+                        <h4>請輸入帳號密碼!!</h4>
+                        <p>帳號<input type="text"></p>
+                        <p>密碼<input type="text"></p>
+                    </div>
+                    
+                    <div id="resultfail">
+                        <p>歡迎登入</p>
+                    </div> 
+            </li> -->
+    </ul>
+    </div>
+
+
+
+    <div id="title">
+        <div class="container-fuild">
+            <div class="row">
+                <div class="girl"><h3>男士</h3></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cardshow">
+            <div class="container-fuild">
+                <div class="row">
+                    <div class="col-2 col-md-2 col-lg-2 col-xl-2">
+                            <div class="card" style="width: 18rem;">
+                                    <div class="overlayimg">
+                                        <img src="./jpg/21.jpg" class="card-img-top" alt="...">
+                                        <div class="overlay">查看內容</div>
+                                    </div>
+                                    <div class="card-body">
+                                      <h5 class="card-title">Product</h5>
+                                      <p class="card-text">$99.99</p>
+                                      <a href="#" class="btn btn-primary">加入購物車</a>
+                                    </div>
+                                  </div>
+                    </div>
+                    <div class="col-2 col-md-2 col-lg-2">
+                            <div class="card" style="width: 18rem;">
+                                    <div class="overlayimg">
+                                            <img src="./jpg/22.jpg" class="card-img-top" alt="...">
+                                            <div class="overlay">查看內容</div>
+                                        </div>
+                                    <div class="card-body">
+                                      <h5 class="card-title">Product</h5>
+                                      <p class="card-text">$99.99</p>
+                                      <a href="#" class="btn btn-primary">加入購物車</a>
+                                    </div>
+                                  </div>
+                    </div>
+
+                    <div class="col-2 col-md-2 col-lg-2">
+                            <div class="card" style="width: 18rem;">
+                                    <div class="overlayimg">
+                                        <img src="./jpg/23.jpg" class="card-img-top" alt="...">
+                                        <div class="overlay">查看內容</div>
+                                    </div>                                   
+                                     <div class="card-body">
+                                      <h5 class="card-title">Product</h5>
+                                      <p class="card-text">$99.99</p>
+                                      <a href="#" class="btn btn-primary">加入購物車</a>
+                                    </div>
+                                  </div>
+                    </div>
+
+                    <div class="col-2 col-md-2 col-lg-2">
+                            <div class="card" style="width: 18rem;">
+                                    <div class="overlayimg">
+                                        <img src="./jpg/24.jpg" class="card-img-top" alt="...">
+                                        <div class="overlay">查看內容</div>
+                                    </div>                                    
+                                    <div class="card-body">
+                                      <h5 class="card-title">Product</h5>
+                                      <p class="card-text">$99.99</p>
+                                      <a href="#" class="btn btn-primary">加入購物車</a>
+                                    </div>
+                                  </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                        <div class="col-2 col-md-2 col-lg-2">
+                                <div class="card" style="width: 18rem;">
+                                        <div class="overlayimg">
+                                                <img src="./jpg/26.jpg" class="card-img-top" alt="...">
+                                                <div class="overlay">查看內容</div>
+                                            </div>                                       
+                                             <div class="card-body">
+                                          <h5 class="card-title">Product</h5>
+                                          <p class="card-text">$99.99</p>
+                                          <a href="#" class="btn btn-primary">加入購物車</a>
+                                        </div>
+                                      </div>
+                        </div>
+                        <div class="col-2 col-md-2 col-lg-2">
+                                <div class="card" style="width: 18rem;">
+                                    <div class="overlayimg">
+                                        <img src="./jpg/27.jpg" class="card-img-top" alt="...">
+                                        <div class="overlay">查看內容</div>
+                                    </div>                                        
+                                    <div class="card-body">
+                                          <h5 class="card-title">Product</h5>
+                                          <p class="card-text">$99.99</p>
+                                          <a href="#" class="btn btn-primary">加入購物車</a>
+                                        </div>
+                                      </div>
+                        </div>
+    
+                        <div class="col-2 col-md-2 col-lg-2">
+                                <div class="card" style="width: 18rem;">
+                                    <div class="overlayimg">
+                                        <img src="./jpg/28.jpg" class="card-img-top" alt="...">
+                                        <div class="overlay">查看內容</div>
+                                    </div>                                        
+                                    <div class="card-body">
+                                          <h5 class="card-title">Product</h5>
+                                          <p class="card-text">$99.99</p>
+                                          <a href="#" class="btn btn-primary">加入購物車</a>
+                                        </div>
+                                      </div>
+                        </div>
+
+
+                        <div class="col-2 col-md-2 col-lg-2">
+                            <div class="card" style="width: 18rem;">
+                                <div class="overlayimg">
+                                    <img src="./jpg/29.jpg" class="card-img-top" alt="...">
+                                    <div class="overlay">查看內容</div>
+                                </div>                                        
+                                <div class="card-body">
+                                      <h5 class="card-title">Product</h5>
+                                      <p class="card-text">$99.99</p>
+                                      <a href="#" class="btn btn-primary">加入購物車</a>
+                                    </div>
+                                  </div>
+                    </div>
+    
+
+    
+                    </div>
+            </div>
+        </div>
+
+        <div id="policy">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-2">
+                                <h4>Z!ZA.Com</h4>
+                        </div>
+                        <div class="col-2">
+                            <h4>顧客諮詢</h4>
+                            <ul>
+                                <li>運送方式></li>
+                                <li>退貨條款></li>
+                                <li>聯絡資訊></li>
+                                <li>關於我們></li>
+                            </ul>
+                        </div>
+        
+                        <div class="col-2">
+                                <h4>本地門市</h4>
+                                <ul>
+                                    <li>台北旗艦店</li>
+                                    <li>新竹光復南路店</li>
+                                    <li>台中中正店</li>
+                                    <li>高雄駁二店</li>
+                                </ul>
+                        </div>
+        
+                        <div class="col-2">
+                            <h4>聯絡資訊</h4>
+                            <ul>
+                                <li><img src="https://static.wixstatic.com/media/d7ffe259c9e54f59837481b3dd0130eb.png/v1/fill/w_30,h_30,al_c,q_80,usm_0.66_1.00_0.01/d7ffe259c9e54f59837481b3dd0130eb.webp" alt=""><span>Instagram</span></li>
+                                <li><img src="https://static.wixstatic.com/media/d3470ec8ca26475da4b228f0199b5d3d.png/v1/fill/w_30,h_30,al_c,q_80,usm_0.66_1.00_0.01/d3470ec8ca26475da4b228f0199b5d3d.webp" alt=""><span>facebook</span></li>
+                            </ul>
+                        </div>
+                    </div>
+             </div>
+        
+                   
+                </div>
+                <div id="footer">
+                    <div class="container">
+                        <div class="row">
+                            <h3>© 2019 by Eic Liao created</h3>
+                        </div>
+                    </div>
+                </div>
+    
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
