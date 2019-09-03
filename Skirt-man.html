@@ -7,6 +7,14 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+
+    <!--Dialog -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+    <script src="./js/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+    <link rel="stylesheet" href="./js/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+
+
 
     <title>Shirt_man</title>
     <style>
@@ -166,6 +174,47 @@
         font-size: 20px;
         vertical-align:bottom;	
       }
+
+
+             /* Diago跳出畫面 */
+
+             .ui-widget-header{
+        color: #fff;  
+        background-color: #364f6b;
+        text-align: center;
+        font-weight: bold;
+        margin: 2px;
+        }
+        .ui-widget-content{
+            background-color: #fff;
+            color: black;
+            opacity: 0.95;
+            font-size: 19px;
+            text-align: left;
+            
+        }
+        .ui-widget-content p{
+            font-size: 20px;
+            padding-left: 30px;
+            margin: 25px;
+        }
+        .ui-dialog-titlebar-close{
+            display: none;
+        }
+        .ui-dialog-buttonset button{
+            color: black;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: #E5F9FA;
+            padding: 5px;
+            margin: 220px;
+        }
+        .ui-dialog-buttonset button:hover{
+            background-color: #364f6b;
+            color:#fff;
+            box-shadow: none;
+        }
+    
     
     </style>
 
@@ -178,9 +227,7 @@
                     <a href="https://eric-yu-liao.github.io/Shirt/Shirt.html">Z!ZA</a>
                 </h1>
             </li>
-            <li class="nav-item">
-                <a class="nav-link active nav-a" href="#content">最新商品</a>
-            </li>
+
             <li class="nav-item">
                 <a class="nav-link active nav-a" href="https://eric-yu-liao.github.io/Shirt/Skirt-girl.html">女士</a>
             </li>
@@ -188,9 +235,18 @@
                 <a class="nav-link active nav-a" href="#">男士</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active nav-a" href="#policy">聯絡我們</a>
+                <a class="nav-link active nav-a" href="https://eric-yu-liao.github.io/Shirt/Skirt_contactus.html">聯絡我們</a>
             </li>
-
+            <!-- <li class="nav-item">
+                <a class="nav-link active nav-a" href="#policy">登入</a>
+            </li> -->
+            <li class="nav-item">
+                <a class="nav-link active nav-a" href="#"><i class="fas fa-user" id="login">登入</i></a>
+                 <div id="loginout" title="系統">
+                        <h4>請輸入帳號密碼!!</h4>
+                        <p>帳號<input type="text"></p>
+                        <p>密碼<input type="text"></p>
+                    </div>
             <!-- <li class="nav-item">
                 <a class="nav-link active nav-a" href="#"><i class="fas fa-user" id="login">登入</i></a>
                  <div id="loginout" title="系統">
@@ -389,8 +445,40 @@
 
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
+
+  <Script>
+  
+        $(document).ready(function(){
+        $(".fas").click(function(e){
+            $("#loginout").dialog("open");
+            $("#loginout").parent().css("transition-duration","0.6s")
+            $("#loginout").parent().css("width","400px")
+            $("#loginout").parent().css("height","auto")
+            e.preventDefault();
+        });
+
+        //check database
+        var check_login=function() {
+
+        $(this).dialog("close");
+        $("#resultfail").dialog("open");
+        }
+
+
+        $("#loginout").dialog({
+        autoOpen: false,
+        modal: true,
+        tile: "info",
+        buttons:{
+        "取消":function(){$(this).dialog("close")},
+        "確定":check_login
+        }
+        });
+        });
+
+  
+  </Script>
 </html>
