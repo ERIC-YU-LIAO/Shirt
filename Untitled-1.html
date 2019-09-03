@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test</title>
+</head>
+<body>
+
+    <div id="container1">container</div>
+    
+</body>
+<script>
+     // who
+    let container1=document.querySelector("#container1")
+    // what
+    let clickhandler = function(){
+        container1.innerHTML="alex"
+    }
+    // when 
+    container1.addEventListener('click',clickhandler)
+
+
+
+    let name =null
+    let year= 2018
+    let status = true
+    let something = null
+    // 純資料，物件，陣列，=> 傳址，傳值
+
+    let newName = name
+    newName =12333
+
+    console.log(name,newName)
+
+
+
+    let person = {
+        name: "alex",
+        sex: "male",
+        sayhi: function(){
+            console.log("您好")
+        }
+    }
+// 傳址，傳值//
+    console.log(person.name)
+    person.sayhi()
+    let newperson = Object.assign({},person)
+    let newperson1 = Object.assign({},person)
+    newperson.name ="xxx"
+    newperson1.sex ="female"
+    console.log(person,newperson,newperson1)
+    console.log(person.sayhi===newperson1.name)
+
+    // let newperson= person
+    // newperson =123
+    // console.log(newperson,person)
+    
+    // console.log(person.sex)
+    // person.sayhi()
+
+    // var ary=[
+    //     'alex','mary','bob'
+    // ]
+
+    // console.log(ary[5])
+    
+
+
+
+
+
+    
+</script>
+</html>
